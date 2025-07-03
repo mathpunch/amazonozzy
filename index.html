@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>My Cool Amazon Picks ✨</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="blobs-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="container">
+    <h1 class="title">My Cool Amazon Picks ✨</h1>
+    <p class="subtitle">Handpicked gear for web devs and creators. With slick animations and style!</p>
+    <div class="product-grid">
+      <a class="product-card" href="https://a.co/d/ipH7SIK" target="_blank" rel="noopener">
+        <img class="product-img" src="https://m.media-amazon.com/images/I/81zj4Lq8hrL._AC_SL1500_.jpg" alt="Mouse Pad" />
+        <div class="product-info">
+          <h2 class="product-title">Mouse Pad</h2>
+          <p class="product-desc">Smooth, durable mouse pad for optimal tracking. Perfect for gaming or work setups.</p>
+          <button class="amazon-btn">View on Amazon</button>
+        </div>
+      </a>
+      <a class="product-card" href="https://a.co/d/8JInluu" target="_blank" rel="noopener">
+        <img class="product-img" src="https://m.media-amazon.com/images/I/81pHhQw9rUL._AC_SL1500_.jpg" alt="Web Developer Stickers" />
+        <div class="product-info">
+          <h2 class="product-title">Web Developer Stickers</h2>
+          <p class="product-desc">A pack of creative, waterproof stickers for laptops, notebooks, and more. Show off your dev pride!</p>
+          <button class="amazon-btn">View on Amazon</button>
+        </div>
+      </a>
+    </div>
+  </div>
+  <script>
+    // Animate product cards on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
